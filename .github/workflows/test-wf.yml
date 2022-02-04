@@ -1,18 +1,22 @@
 name: Test Branch Workflow
 
-
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - 'b3'
+    paths:
+      - './.github/workflows/test-wf.yml'
+      - ''./test.txt'
 
 jobs:
   job1:
     name: job1 success
     runs-on: ubuntu-latest
     steps:
-      - run: echo "job1 success"
+      - run: echo "${GITHUB_REF}"
   job2:
-    name: job2 success
+    name: hey mon
     runs-on: ubuntu-latest
     needs: job1
     steps:
-      - run: echo "job2 success"
+      - run: echo "hey mon"
