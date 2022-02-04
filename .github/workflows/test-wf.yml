@@ -14,9 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${GITHUB_REF}"
-  job2:
-    name: hey mon
-    runs-on: ubuntu-latest
+  checkout:
+    name: Check out
+    uses: actions/checkout@v2
     needs: job1
-    steps:
-      - run: echo "hey mon"
