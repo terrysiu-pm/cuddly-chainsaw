@@ -6,7 +6,7 @@ on:
       - 'b3'
     paths:
       - './.github/workflows/test-wf.yml'
-      - './text.txt'
+      - 'text.txt'
 
 jobs:
   job1:
