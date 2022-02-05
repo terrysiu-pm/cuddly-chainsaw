@@ -5,7 +5,7 @@ on:
     branches:
       - 'b3'
     paths:
-      - './.github/workflows/test-wf.yml'
+      - '.github/workflows/test-wf.yml'
       - 'text.txt'
 
 jobs:
@@ -14,7 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "${GITHUB_REF}"
+      - run: echo "${GITHUB_WORKSPACE}"
   checkout:
     name: Check out
-    uses: actions/checkout@v2
+    runs-on: ubuntu-latest
     needs: job1
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v2
