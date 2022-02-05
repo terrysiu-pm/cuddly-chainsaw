@@ -2,8 +2,8 @@ name: Test Branch Workflow
 
 on:
   push:
-    branches:
-      - ${{ GITHUB_REF##*/ }}
+    branches-ignore:
+      - 'main'
     paths:
       - '.github/workflows/test-wf.yml'
       - 'text.txt'
