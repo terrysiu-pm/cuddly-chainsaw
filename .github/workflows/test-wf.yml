@@ -13,7 +13,7 @@ jobs:
     name: job1 success
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${GITHUB_REF}"
+      - run: echo "${GITHUB_REF##*/}"
       - run: echo "${GITHUB_WORKSPACE}"
 
   checkout:
